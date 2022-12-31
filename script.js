@@ -7908,6 +7908,11 @@ Webflow.define('brand', module.exports = function ($) {
   };
 
   function onFullScreenChange() {
+    var fullScreen = doc.fullScreen || doc.mozFullScreen || doc.webkitIsFullScreen || doc.msFullscreenElement || Boolean(doc.webkitFullscreenElement);
+    $(brandElement).attr('style', fullScreen ? 'display: none !important;' : '');
+  }
+
+  function createBadge() {
     return;
   }
 
